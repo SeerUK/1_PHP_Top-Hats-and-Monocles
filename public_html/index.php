@@ -1,17 +1,17 @@
 <?php
 
-  /*
-   //
-   // Iris Mail
-   // 13/01/2012
-   //
-   // Elliot Wright
-   // index.php
-   //
-  */
+    /**
+     * 0_PHP_DB-Session-Login
+     *
+     * v0.1-prealpha
+     * Main public executable wrapper.
+     *
+     * @author     Elliot Wright
+     * @package    SeerUK.0_PHP_DB-Session-Login
+     * @version    v0.1-prealpha
+     *
+     */
 
-  // Build Page:
-  require("init_data.php");
-  require("init_layout.php");
-  
-?>
+    require_once( 'init.php' );
+
+    exit;

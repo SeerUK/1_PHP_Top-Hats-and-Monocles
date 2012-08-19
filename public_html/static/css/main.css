@@ -1,0 +1,117 @@
+/**
+ * Top Hats & Monocles
+ *
+ * @rel         stylesheet
+ * @desc        This is the main stylesheet for the website.
+ *
+ */
+
+/**
+ * Page Setup
+ */
+body {
+    font: 13px 'prenton', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+
+/**
+ * Common Elements
+ */
+.clearfix { clear: both; }
+.left { float: left; }
+.right { float: right; }
+
+.serif { font-family: 'rooney-web', serif; }
+.sans { font-family: 'prenton', sans-serif; }
+
+a { color: #096; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 {
+
+}
+
+/**
+ * Navigation Elements
+ */
+#PrimaryNavigation {
+    font: 18px 'bb', sans-serif;
+    list-style: none;
+    margin: 26px 0 0 0;
+}
+    #PrimaryNavigation li {
+        margin: 4px 58px 14px 10px;
+        text-align: right;
+    }
+        #PrimaryNavigation li a {
+            color: white;
+            text-decoration: none;
+        }
+            #PrimaryNavigation li a:hover {
+                color: #096;
+            }
+
+/**
+ * Footer
+ */
+#Footer {
+    bottom: 16px;
+    color: white;
+    left: 16px;
+    position: absolute;
+    width: 240px;
+}
+    #Footer div {
+        padding: 10px;
+    }
+        #Footer div span.main {
+            color: #8A8A8A;
+            display: block;
+            font-size: 12px;
+            margin: 0 0 6px 0;
+        }
+        #Footer div span.desc {
+            color: #444;
+            display: block;
+            font-size: 12px;
+        }
+    #Footer .lines {
+        background: url('../images/LineBlack.gif') repeat-x;
+        height: 10px;
+        padding: 0 !important;
+        width: 100%;
+    }
+
+/**
+ * Column Layout
+ */
+#LeftColumn {
+    background: url('../images/LeftColumn-bg.gif') repeat-y left;
+    color: white;
+    height: 100%;
+    left: 0;
+    max-height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+
+#CentreColumn {
+    margin: 0 300px;
+}
+
+#RightColumn {
+    background: url('../images/RightColumn-bg.gif') repeat-y right;
+    color: white;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+}
