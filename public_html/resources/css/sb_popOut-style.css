@@ -1,0 +1,179 @@
+/*
+ //
+ // Top Hats & Monocles
+ // 13/01/2012
+ //
+ // Elliot Wright
+ // modules/core/resources/css/style.css
+ //
+*/
+
+/* Main Setup */
+html, body {
+  height: 100%;
+}
+
+html, body, header {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 11px normal Tahoma, Arial, Helvetica,sans-serif;
+}
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+.oborder1{border-top: 1px solid #090909; border-bottom: 1px solid #090909; margin-top: 14px; margin-right: 1px;}
+.iborder1{border-top: 1px solid #3B3B3B; border-bottom: 1px solid #3B3B3B; background-color: #181818; width: 273px;}
+
+.lines-b {
+  background: transparent url('../img/line-black.gif') repeat-x scroll left center;
+  min-height: 10px;
+  margin: 18px 0;
+}
+  .lines-b2 {
+    background: transparent url('../img/line-black.gif') repeat-x scroll left center;
+    border-bottom: 1px solid #090909;
+    min-height: 10px;
+  }
+
+.lines-w {
+  background: transparent url('../img/line-white.gif') repeat-x scroll left center;
+  min-height: 10px;
+  margin: 18px 0;
+}
+
+a {
+  color: #009966;
+  text-decoration: none;
+}
+  a:hover {
+    text-decoration: underline;
+  }
+
+/* Shoutbox */
+#chat {
+  background-color: #111;
+  height: 300px;
+  position: relative;
+}
+#messages {
+  background-color: #121212;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  padding: 10px;
+  font-size: 12px;
+}
+
+  #loading {
+    color: white;
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    top: 50%;
+  }
+  
+.message {
+  color: white;
+  padding: 1px;
+  position: relative;
+}
+
+  .message .user {
+    float: left;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .message .time {
+    color: #999;
+    display: block;
+    float: left;
+    font-size: 9px;
+    margin-top: 2px;
+    margin-right: 3px;
+    text-align: right;
+    width: 37px;
+  }
+  
+  .message .welcome {
+    color: #999;
+  }
+  
+  .message .msg {
+    word-wrap: break-word;
+  }
+    .message .msg img {
+      margin-bottom: -4px;
+    }
+  
+  .message .sb-mod-msgcontrols {
+    background-color: #0a0a0a;
+    border: 1px solid black;
+    border-radius: 2px;
+    display: block;
+    padding: 4px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    visibility: hidden;
+  }
+    .message:hover .sb-mod-msgcontrols {
+      visibility: visible;
+    }
+  
+#sb-modcp {
+  background-color: #222;
+  border-bottom: 1px solid #444;
+  top: 0;
+  color: white;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+  #sb-modcp a {
+    color: white;
+    cursor: pointer;
+  }
+  
+.sb-mod{
+  color: #999;
+  font-size: 8px;
+  margin-top: 2px;
+  margin-right: 3px;
+  text-align: right;
+  width: 37px;
+}
+
+#controls {
+  background-color: #191919;
+  border-top: 1px solid #3b3b3b;
+  border-bottom: 1px solid #3b3b3b;
+  margin-bottom: -1px;
+  padding: 28px 20px;
+  position: absolute;
+  margin-right: -40px;
+}
+
+  #controls span.plzlogin {
+    color: #aaa;
+    display: block;
+    font-size: 12px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+  }
+
+#txt_msg {
+  background-color: #0d0d0d;
+  border: 1px solid #3b3b3b;
+  border-radius: 3px;
+  color: white;
+  float: left;
+  padding: 9px;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<!-- To use a variable for the sitemap functions to process, use a variable from the siteMapVars array. -->
+<sitemap>
+  <!-- Other Pages -->
+  <siteMapNode id="home" title="Watching: !streamName!" template="home"></siteMapNode>
+  <siteMapNode id="strmr-cp" title="Streamer Panel" template="streamer-panel"></siteMapNode>
+  <siteMapNode id="register" title="Register" template="register"></siteMapNode>
+</sitemap>

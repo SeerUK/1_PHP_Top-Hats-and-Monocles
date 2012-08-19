@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!-- To use a variable for the sitemap functions to process, use a variable from the siteMapVars array. -->
+<sitemap>
+  <!-- Other Pages -->
+  <siteMapNode id="login" title="Login" template="login.main"></siteMapNode>
+</sitemap>

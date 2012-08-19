@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<!-- To use a variable for the sitemap functions to process, use a variable from the siteMapVars array. -->
+<sitemap>
+  <siteMapNode id="404" title="404 Not Found" template="404"></siteMapNode>
+</sitemap>

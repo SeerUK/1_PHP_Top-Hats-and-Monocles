@@ -1,0 +1,1 @@
+var savemeLocation = 'http://www.iris-mail.net/';

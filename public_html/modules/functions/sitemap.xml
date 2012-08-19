@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!-- To use a variable for the sitemap functions to process, use a variable from the siteMapVars array. -->
+<sitemap>
+  <!-- Other Pages -->
+  <siteMapNode id="fn-shoutbox" title="Shoutbox" template="shoutbox"></siteMapNode>
+  <siteMapNode id="fn-vwrcnt" title="Viewer Count" template="vwrcnt"></siteMapNode>
+  <siteMapNode id="fn-livestreams" title="Current Live Streams" template="livestreams"></siteMapNode>
+  <siteMapNode id="shoutbox" title="Shoutbox" template="popout-chat"></siteMapNode>
+</sitemap>

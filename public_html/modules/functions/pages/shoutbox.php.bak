@@ -1,0 +1,125 @@
+<?php
+
+  /*
+   *  
+   *  AJAX Shoutbox Test
+   *  18/03/2012
+   *  Elliot Wright
+   *
+  */
+  
+  // Pretend config here:
+  $filename = "shouts.log";
+  
+  function SBprocessTime($timestamp) {
+    $tarray = getdate(intval($timestamp));
+    $ctarray = getdate(time());
+    $tarray = getdate(intval($timestamp));
+    if($tarray['minutes'] < 10) {
+      $tarray['minutes'] = "0" . $tarray['minutes'];
+    }
+    if($tarray['hours'] > 12) {
+      $tarray['hours'] = $tarray['hours'] - 12;
+      $meridiem = "PM";
+    } else {
+      $meridiem = "AM";
+    }
+    if($tarray['hours'] < 10) {
+      $tarray['hours'] = "0" . $tarray['hours'];
+    }
+    $time = $tarray['hours'] . ":" . $tarray['minutes'] . $meridiem;
+    return $time;
+  }
+  
+  // What to do...
+  if($_GET['action'] == "submit") {
+    include('../../../config.php');
+    include('../../../includes/session.php');
+    $handler = fopen($filename, 'a');
+    // This will submit messages:
+    if(isset($_POST['message'])) {      
+      // Need to get prefix and suffix correct:
+      $gi = groupInfo($user->data['pgroup']);
+      $username = $user->data['user_name'];
+      $user = $gi['group_prefix'];
+      $user .= "$username";
+      $user .= $gi['group_suffix'];
+      if($gi['group_id'] > 4) {
+        $user .= "&nbsp;<span class='sb-mod'>MOD</span>";
+      }
+      $tmpMessage = $_POST['message'];
+      $tmpMessage = str_replace(",","&#44;",$tmpMessage);
+      $tmpMessage = str_replace("<","&lt;",$tmpMessage);
+      $tmpMessage = str_replace(">","&gt;",$tmpMessage);
+      $tmpMessage = mysql_real_escape_string($tmpMessage);
+      $tmpMessage = stripslashes($tmpMessage);
+      $message = "";
+      if($gi['group_id'] > 4) {
+        $message .= "<strong>";
+      }
+      $message .= $tmpMessage;
+      if($gi['group_id'] > 4) {
+        $message .= "</strong>";
+      }
+      $time = time();
+      $string = "\r\n" . "$user,$message,$time";
+      fwrite($handler,$string);
+    }
+  } elseif($_GET['action'] == "get") {
+    $handler = fopen($filename, 'r');
+    echo "<div class='message'><span class='welcome'><em>Welcome to the Top Hats &amp; Monocles room!</em></span></div>";
+    $linecount = 0;
+    while(fgets($handler) !== false) $linecount++;
+    $ln_offset = $linecount - 200;
+    if($ln_offset < 1) {
+      $ln_offset = 1;
+    }
+    $line = 1;
+    fclose($handler);
+    $handler = fopen($filename, 'r');
+    while (($buffer = fgets($handler)) !== false) {
+      if ($line == $ln_offset) {
+        $shouts[] = $buffer;
+        $ln_offset++;
+      }   
+      $line++;
+    }
+    if($shouts) {
+      foreach ($shouts as $shout) {
+        $process = true;
+        $shout = explode(",",$shout);
+        if($shout[0] == null) {
+          $process = false;
+        } elseif($shout[1] == null) {
+          $process = false;
+        } elseif($shout[2] == null) {
+          $process = false;
+        }
+        // Continue if correct data:
+        if($process == true) {
+          $count = count($shout);
+          $shout['user'] = $shout[0];
+          $shout['message'] = $shout[1];
+          $shout['time'] = $shout[2];
+          echo "<div class='message'>";
+          echo "<span class='time'>" . SBprocessTime($shout['time']) . "</span>";
+          if($shout['user'] == "Seer") {
+            echo "<span class='user'>" . $shout['user'] . ":</span>";
+          } else {
+            echo "<span class='user'>" . $shout['user'] . ":</span>";
+          }
+          if($shout['user'] == "Seer") {
+            echo "<span class='msg'><strong>" . $shout['message'] . "</strong></span>";
+          } else {
+            echo "<span class='msg'>" . $shout['message'] . "</span>";
+          }
+          echo "</div>";
+        }
+      }
+    }
+  } else {
+    header("Location: " . ROOT_PATH);
+    exit;
+  }
+  
+?>

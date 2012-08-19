@@ -1,0 +1,905 @@
+/*
+ //
+ // Top Hats & Monocles
+ // 13/01/2012
+ //
+ // Elliot Wright
+ // modules/core/resources/css/style.css
+ //
+*/
+
+html {
+  min-width: 1200px;
+}
+
+/* Main Setup */
+html, body {
+  height: 100%;
+}
+
+html, body, header {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 11px normal Tahoma, Arial, Helvetica,sans-serif;
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both; float: none !important;}
+.oborder1{border-top: 1px solid #090909; border-bottom: 1px solid #090909; margin-top: 14px; margin-right: 1px;}
+.iborder1{border-top: 1px solid #3B3B3B; border-bottom: 1px solid #3B3B3B; background-color: #181818; width: 273px;}
+
+.lines-b {
+  background: transparent url('../img/line-black.gif') repeat-x scroll left center;
+  min-height: 10px;
+  margin: 18px 0;
+}
+  .lines-b2 {
+    background: transparent url('../img/line-black.gif') repeat-x scroll left center;
+    border-bottom: 1px solid #090909;
+    min-height: 10px;
+  }
+
+.lines-w {
+  background: transparent url('../img/line-white.gif') repeat-x scroll left center;
+  min-height: 10px;
+  margin: 18px 0;
+}
+
+a {
+  color: #009966;
+  text-decoration: none;
+}
+  a:hover {
+    text-decoration: underline;
+  }
+
+h1 {
+  display: block;
+  font: 24px 'lb', Arial, Helvetica, sans-serif;
+  color: #3B3B3B;
+  background: transparent url('../img/line-white.gif') repeat-x scroll left center;
+  min-height: 10px;
+  margin: 0 0 20px 0;
+}
+  h1 span {
+    background-color: white;
+    padding-right: 10px;
+  }
+  
+h2 {
+  display: block;
+  font: 24px 'bb', Arial, Helvetica, sans-serif;
+  color: #3B3B3B;
+  min-height: 10px;
+  margin: 0 0 20px 0;
+}
+
+/* Weird Page Layout: */
+#minHeight {
+  float: right;
+  width: 0px;
+  height: 100%;
+  margin-bottom: -52px;
+}
+
+#ml-content {
+  margin-left: 274px;
+  margin-right: 274px;
+  background: white;
+  margin-bottom: -52px;
+  min-height: 100%;
+}
+
+#ml-left {
+  background-image: url('../img/ml-left-bg.gif');
+  position: relative;
+  width: 274px;
+  float: left;
+  margin-left: -272px;
+  z-index: 100;
+  left: -2px;
+  padding-right: 14px;
+}
+
+#ml-right {
+  background-image: url('../img/ml-right-bg.gif');
+  position: relative;
+  width: 274px;
+  float: right;
+  margin-right: -272px;
+  left: 2px;
+  color: black;
+  padding-left: 14px;
+}
+
+#ml-centre {
+  width: 100%;
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin: 0 -16px;
+  color: black;
+  cursor: default !important;
+  overflow-y: auto;
+}
+
+  #ml-middle {
+    padding: 25px 40px;
+  }
+
+/* User Area */
+#user-box {
+  background-color: #181818;
+  border-top: 1px solid #3B3B3B;
+  border-bottom: 1px solid #3B3B3B;
+  height: 109px;
+  position: relative;
+  width: 273px;
+}
+
+  #user-box span#name {
+    color: white;
+    display: block;
+    font: 18px normal 'bb', Arial, Helvetica,sans-serif;
+    font-family: 'bb', Arial, Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    right: 32px;
+    text-align: left;
+    top: 18px;
+    width: 118px;
+  }
+  #user-box span#account, #user-box span#logout {
+    color: white;
+    display: block;
+    font: 11px normal Tahoma, Arial, Helvetica,sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: left;
+    width: 118px;  
+  }
+  
+  #user-box span#account a, #user-box span#logout a {  
+    color: white;
+  }
+  
+  #user-box span#account {
+    right: 32px;
+    top: 56px;
+  }
+  
+  #user-box span#logout {
+    right: 32px;
+    top: 72px;
+  }
+  
+  #user-box img {
+    border: 4px solid #3B3B3B;
+    position: absolute;
+    left: 32px;
+    top: 14px;
+    width: 73px;
+    height: 73px;
+  }
+
+/* Live Streams Area */
+#livestreams {
+  margin-top: 45px;
+  overflow: hidden;
+}
+
+  .lc-stream, .mn-stream {
+    height: 109px;
+    position: relative;
+    text-align: right;
+    width: 273px;
+  }
+  
+    .lc-stream a.stsn {
+      display: block;
+      width: 274px;
+      height: 109px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .lc-stream:hover {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      background-color: #161616;
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+  
+    .lc-stream span.title, .mn-stream span.title {
+      color: white;
+      display: block;
+      font: 18px normal 'bb', Arial, Helvetica,sans-serif;
+      font-family: 'bb', Arial, Helvetica,sans-serif;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      left: 32px;
+      text-align: right;
+      top: 18px;
+      width: 118px;
+    }
+    
+    .lc-stream span.desc, .lc-stream span.vwrcnt, .mn-stream span.desc, .mn-stream span.vwrcnt {
+      color: white;
+      display: block;
+      font: 11px normal Tahoma, Arial, Helvetica,sans-serif;
+      text-transform: uppercase;
+      position: absolute;
+      text-align: right;
+      width: 118px;
+    }
+    
+    .lc-stream span.desc, .mn-stream span.desc {
+      left: 32px;
+      top: 56px;
+    }
+    
+    .lc-stream span.vwrcnt, .mn-stream span.vwrcnt {
+      left: 32px;
+      top: 72px;
+    }
+    
+    .lc-stream img, .mn-stream img {
+      border: 4px solid #3b3b3b;
+      position: absolute;
+      right: 32px;
+      top: 14px;
+    }
+
+/* Footer */
+#footer {
+  bottom: 0;
+  color: #8a8a8a;
+  position: absolute;
+  width: 210px;
+  margin: 16px 31px;
+}
+  #footer span {
+    display: block;
+    margin-top: 4px;
+  }
+  #footer span.desc {
+    color: #484848;
+  }
+    #footer span.desc a {
+      font-size: 12px;
+    }
+
+/* Primary Navigation */
+#primary-nav {
+  color: white;
+  font: 18px normal 'bb', Arial, Helvetica,sans-serif;
+  font-family: 'bb', Arial, Helvetica,sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  list-style: none;
+  margin: 26px 32px;
+  text-align: right;
+}
+
+  #primary-nav li {
+    margin-bottom: 14px;
+  }
+
+    #primary-nav li a {
+      color: white;
+      text-decoration: none;
+    }
+      #primary-nav li a:hover {
+        color: #009966;
+        text-decoration: none;
+      }
+    
+/* Secondary Navigation */
+.secondary_navigation {
+  font: normal 11px tahoma,helvetica,arial,sans-serif;
+  clear: both;
+  background: #E0E0E0 url('../img/secondary_nav_bg.png') repeat-x 0 0;
+  border: 1px solid #CDCDCD;
+  text-shadow: rgba(255, 255, 255, 0.8) 0px 1px 0px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  line-height: 37px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+  .secondary_navigation a {
+    color: #333;
+    line-height: 37px;
+    height: 37px;
+    text-decoration: none;
+  }
+  
+  .secondary_navigation .breadcrumb li {
+    float: left;
+    position: relative;
+  }
+  
+    .secondary_navigation .breadcrumb li a {
+      padding-left: 11px !important;
+      background: url('../img/secondary_nav.png') no-repeat 0 0;
+      display: block;
+      outline: none;
+      text-decoration: none;
+      margin-left: -8px;
+    }
+    
+      .secondary_navigation .breadcrumb li.first a span {
+        padding-left: 10px;
+        border-radius: 3px 0px 0px 3px;
+        -moz-border-radius: 3px 0px 0px 3px;
+        border-radius: 3px 0px 0px 3px;
+      }
+      
+    .secondary_navigation .breadcrumb li span {
+      display: block;
+      padding-right: 17px;
+      padding-left: 7px;
+      background: url('../img/secondary_nav.png') no-repeat 100% 0;
+    }
+    
+    .secondary_navigation .breadcrumb li a:hover {
+      background-position:0 -43px
+    }
+    
+    .secondary_navigation .breadcrumb li a:hover span {
+      background-position:100% -43px
+    }
+    
+    .secondary_navigation .breadcrumb li a:active {
+      background-position:0 -86px
+    }
+    
+    .secondary_navigation .breadcrumb li a:active span{
+      background-position:100% -86px
+    }
+    
+.breadcrumb {
+  color: #333;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  .breadcrumb li:first-child {
+    margin-left: 0;
+  }    
+
+/* Login Page */
+#loginform {
+  border-top: 1px solid #3b3b3b;
+  border-bottom: 1px solid #3b3b3b;
+  background-color: #181818;
+  height: 109px;
+  position: relative;
+  width: 273px;  
+}
+
+  #loginform ul {
+    list-style: square;
+    margin-left: -10px;
+  }
+    
+    #loginform ul li a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+  #loginform span.error {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #loginform input[type='text'], #loginform input[type='password'] {
+    background-color: #0d0d0d;
+    border: 1px solid #49433e;
+    border-radius: 2px;
+    color: white;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    padding: 8px;
+    left: 10px;
+    position: absolute;
+    width: 160px;
+  }
+    
+  #loginform input[type='text'] {
+    top: 10px;
+  }
+  
+  #loginform input[type='password'] {
+    bottom: 4px;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #8a8a8a;
+    font-style: italic;
+  }
+  :-moz-placeholder {
+    color: #8a8a8a;
+    font-style: italic;
+  }
+  #loginform #lf_remember {
+    color: #6f7f95;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+  
+  #loginform input[type='submit'] {
+    background-color: #3b3b3b;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #000;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    height: 84px;
+    right: 12px;
+    position: absolute;
+    top: 12px;
+    width: 62px;
+  }
+  
+  #loginform div {
+    margin-bottom: -5px;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+    #loginform div a {
+      color: #999;
+      text-decoration: none;
+    }
+    
+  #lf-errors {
+    background-color: #af2222;
+    background-image: url('../img/1pxwhite.jpg');
+    background-position: top;
+    background-repeat: repeat-x;
+    border: 1px solid #640d0d;
+    border-radius: 5px;
+    padding: 0 !important;
+    position: absolute;
+    left: -200px;
+    top: 12px;
+    width: 180px;
+    z-index: 9999;
+  }
+    #lf-errors img {
+      position: absolute;
+      right: -10px;
+      top: 6px;
+    }
+    
+/* Shoutbox */
+#chat {
+  position: relative;
+}
+#messages {
+  background-color: #121212;
+  width: 254px;
+  overflow: auto;
+  position: relative;
+  padding: 10px;
+  font-size: 12px;
+}
+
+  #loading {
+    color: white;
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    top: 50%;
+  }
+  
+.message {
+  color: white;
+  padding: 1px;
+  position: relative;
+}
+
+  .message .user {
+    float: left;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .message .time {
+    color: #999;
+    display: block;
+    float: left;
+    font-size: 9px;
+    margin-top: 2px;
+    margin-right: 3px;
+    text-align: right;
+    width: 37px;
+  }
+  
+  .message .welcome {
+    color: #999;
+  }
+  
+  .message .msg {
+    word-wrap: break-word;
+  }
+    .message .msg img {
+      margin-bottom: -4px;
+    }
+  
+  .message .sb-mod-msgcontrols {
+    background-color: #0a0a0a;
+    border: 1px solid black;
+    border-radius: 2px;
+    display: block;
+    padding: 4px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    visibility: hidden;
+  }
+    .message:hover .sb-mod-msgcontrols {
+      visibility: visible;
+    }
+  
+#sb-modcp {
+  background-color: #222;
+  border-bottom: 1px solid #444;
+  top: 0;
+  color: white;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  width: 95%;
+  z-index: 1;
+}
+
+  #sb-modcp a {
+    color: white;
+    cursor: pointer;
+  }
+  
+.sb-mod{
+  color: #999;
+  font-size: 8px;
+  margin-top: 2px;
+  margin-right: 3px;
+  text-align: right;
+  width: 37px;
+}
+
+#controls {
+  background-color: #191919;
+  width: 234px;
+  border-top: 1px solid #3b3b3b;
+  border-bottom: 1px solid #3b3b3b;
+  margin-bottom: -1px;
+  padding: 28px 20px;
+  position: absolute;
+}
+
+  #controls span.plzlogin {
+    color: #aaa;
+    display: block;
+    font-size: 12px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+  }
+
+#txt_msg {
+  background-color: #0d0d0d;
+  border: 1px solid #3b3b3b;
+  border-radius: 3px;
+  color: white;
+  float: left;
+  padding: 9px;
+  width: 170px;
+}
+
+#sb-popout-a {
+  background-color: #222;
+  background-image: url('../img/popout.png');
+  background-position: center;
+  border: 1px solid #0d0d0d;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 34px;
+  margin-right: 8px;
+  margin-top: 2px;
+  width: 34px;
+}
+
+  #sb-popout-a:hover {
+    border: 1px solid #555;
+  }
+
+/* Stream */
+#ostream {
+  margin: 0 21px;
+}
+#streambox {
+  background-color: #cbcac3;
+  border: 1px solid #b0b0b0;
+  border-radius: 3px;
+  margin: auto;
+  padding: 6px 6px 6px 6px;
+  max-width: 1280px;
+  max-height: 720px;
+}
+#streaminfo {
+  background-color: #eeeee9;
+  border: 1px solid #cbcac3;
+  border-radius: 3px;
+  margin: -6px auto 0 auto;
+  height: 118px;
+  position: relative;
+  max-width: 1292px;
+  z-index: -1;
+}
+
+  #streaminfo img {
+    border: 4px solid #cbcac3;
+    height: 73px;
+    width: 73px;
+  }
+
+  #streaminfo #game-img {
+    left: 33px;
+    position: absolute;
+    top: 22px;
+  }
+  
+  #streaminfo #streamer-img {
+    right: 33px;
+    position: absolute;
+    top: 22px;
+  }
+  
+  #streaminfo #si-game, #streaminfo #si-livefor, #streaminfo #si-totalvws, #streaminfo #si-streamer, #streaminfo #si-joined, #streaminfo #si-vwrcnt {
+    position: absolute;
+    width: 200px;
+  }
+  
+  #streaminfo #si-game, #streaminfo #si-streamer {
+    color: #2c2c2c;
+    font-family: 'bb', Arial, Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    top: 28px;
+  }
+  
+  #streaminfo #si-game, #streaminfo #si-livefor, #streaminfo #si-totalvws {
+    left: 122px;
+  }
+  #streaminfo #si-streamer, #streaminfo #si-joined, #streaminfo #si-vwrcnt {
+    right: 122px;
+    text-align: right;
+  }
+  
+  #streaminfo #si-livefor, #streaminfo #si-totalvws, #streaminfo #si-joined, #streaminfo #si-vwrcnt {
+    color: #3b3b3b;
+    text-transform: uppercase;
+  }
+  
+  #streaminfo #si-livefor, #streaminfo #si-joined {
+    top: 65px;
+  }
+  
+  #streaminfo #si-totalvws, #streaminfo #si-vwrcnt {
+    top: 80px;
+  }
+  
+/* Streamer Control Panel */
+#scp-controls {
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  margin: 40px 0;
+  padding: 25px;
+}
+
+  #scp-controls select {
+    background-color: #fff;
+    color: #444;
+    padding: 7px;
+  }
+  
+  #scp-controls input[type="submit"] {
+    height: 36px;
+  }
+  
+.scp-label {
+  color: #222;
+  display: block;
+  float: left;
+  font: 16px 'bb', Arial, Helvetica, sans-serif;
+  margin-top: 7px;
+  width: 80px;
+}
+
+/* Registration */
+#rg-form {
+  
+}
+
+  #rg-form span.label {
+    color: #222;
+    display: block;
+    float: left;
+    font: 16px 'bb', Arial, Helvetica, sans-serif;
+    margin-top: 7px;
+    margin-right: 10px;
+    text-align: right;
+    width: 140px;
+  }
+  
+  #rg-form span.desc {
+    display: block;
+    margin-left: 160px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+  }
+  
+  #rg-form input[type="text"], #rg-form input[type="password"] {
+    background-color: #fff;
+    color: #222;
+    padding: 7px;
+    width: 240px;
+  }
+  
+  #rg-submit {
+    display: block;
+    font: 16px 'bb', Arial, Helvetica, sans-serif;
+    margin-left: 149px;
+    margin-top: 10px;
+    padding: 6px 20px 28px 20px;
+  }
+  
+  .rg-error {
+    color: #af2222;
+    margin-left: 10px;
+  }
+  
+/* Forum */
+#container {
+  color: white;
+  font-size: 12px;
+  margin: 0 21px;
+}
+.fr-category {
+  background-color: #cbcac3;
+  border: 1px solid #b0b0b0;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+  .fr-category .header {
+    background-color: #111;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-family: 'bb', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 12px 10px;
+    word-spacing: 4px;
+  }
+.fr-rows {
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 100%;
+}
+.fr-row {
+  background-color: #222;
+  display: inline-table;
+  position: relative;
+  width: 100%;
+}
+  .fr-row td {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #111; 
+  }
+  
+  .fr-status {
+    width: 35px;
+    vertical-align: middle;
+  }
+    .fr-status.new img {
+      margin-left: -14px;
+    }
+  
+  .fr-name {
+    padding: 10px;
+    width: auto;
+  }
+    .fr-name .fr-title {
+      color: #009966;
+      display: block;
+      font-family: 'bb', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      margin-bottom: 2px;
+      word-spacing: 4px;
+    }
+    .fr-name .fr-desc {
+      display: block;
+    }
+  
+  .fr-stats {
+    padding-right: 8px;
+    text-align: right;
+    width: 90px;
+  }
+    .fr-stats span {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+  
+  .fr-lastpost {
+    width: 250px;
+  }
+    .fr-lastpost .topic, .fr-lastpost .desc {
+      display: block;
+    }
+    
+    .fr-lastpost .topic {
+      color: #009966;
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+    
+    .fr-lastpost .desc {
+      color: #bbb;
+      font-size: 11px;
+    }
+      .fr-lastpost .desc span {
+        color: white !important;
+      }
+    
+    .fr-lastpost-avatar {
+      background-color: #444;
+      border: 1px solid #1d1d1d;
+      float: left;
+      height: 32px;
+      margin-right: 10px;
+      padding: 3px;
+      width: 32px;
+    }
+    
+    .fr-lastpost-info {
+      float: left;
+      margin-top: 4px;
+    }
+
+/* Stupid Fucked Up Stream Bullshit */
+#live_embed_player_flash {
+  height: 100% !important;
+}
