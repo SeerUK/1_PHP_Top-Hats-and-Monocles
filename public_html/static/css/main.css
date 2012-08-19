@@ -9,12 +9,13 @@
 /**
  * Page Setup
  */
+html { height: 100%; }
 body {
     font: 13px 'prenton', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    }
+}
 
 /**
  * Common Elements
@@ -101,7 +102,10 @@ h1 {
 }
 
 #CentreColumn {
+    height: 100%;
     margin: 0 300px;
+    max-height: 100%;
+    min-height: 100%;
 }
 
 #RightColumn {
@@ -110,6 +114,7 @@ h1 {
     height: 100%;
     max-height: 100%;
     min-height: 100%;
+    overflow: hidden;
     position: absolute;
     right: 0;
     top: 0;

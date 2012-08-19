@@ -1,7 +1,9 @@
 {{include file='.\RootHeader.tpl'}}
 
-<div id="CentreColumn">Stream goes here...
-    <img src="{{$strAvatarUrl}}" alt="" title="" />
+<div id="CentreColumn">
+    <div id="tester">
+        
+    </div>
 </div>
 
 {{include file='.\RootFooter.tpl'}}

@@ -9,6 +9,9 @@
      *
      */
 
+    /**
+     * Require the CommonUI functions:
+     */
     require_once( 'modules/Common.class.php' );
 
     class RootUI implements TemplateReq

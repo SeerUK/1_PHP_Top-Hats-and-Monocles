@@ -17,9 +17,13 @@
     /**
      * Database handler main class
      */
-    class DbHandler {
+    class DbHandler
+    {
 
-        public function __construct() {
+        private $objDb;
+
+        public function __construct()
+        {
 
             /**
              * Initialisde database connection upon class creation:
@@ -29,7 +33,22 @@
                 'host'      => DB_HOST,
                 'username'  => DB_USER,
                 'password'  => DB_PASS,
+                'database'  => DB_DB,
             ));
+        }
+
+        public static function Query($strQuery)
+        {
+            try
+            {
+                $result = dibi::query($strQuery);
+                return $result;
+            }
+            catch ( DibiDriverException $e )
+            {
+                trigger_error( '<strong></strong> DbHandler::Query Error: <strong>' . $e->getMessage() . '</strong> in <strong>' . $e->getFile() . '</strong> on line <strong>' . $e->getLine() . '</strong>', E_USER_ERROR );
+                exit;
+            }
         }
 
     }

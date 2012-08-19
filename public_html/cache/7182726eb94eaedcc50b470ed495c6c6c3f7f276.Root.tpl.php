@@ -5,7 +5,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7182726eb94eaedcc50b470ed495c6c6c3f7f276' => 
     array (
       0 => 'modules\\templates\\Root\\Root.tpl',
-      1 => 1345405813,
+      1 => 1345409127,
       2 => 'file',
     ),
     '8097d150740fe0dde7378c29338c609ae72d35d6' => 
@@ -24,10 +24,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'nocache_hash' => '5345031351fcb45c8-87621641',
   'cache_lifetime' => 120,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_503148c2b99018_59045206',
+  'unifunc' => 'content_503152fce7e448_44449986',
   'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_503148c2b99018_59045206')) {function content_503148c2b99018_59045206($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_503152fce7e448_44449986')) {function content_503152fce7e448_44449986($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <title>Watching: Darksiders | Top Hats & Monocles</title>
@@ -54,8 +54,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
 
 
-<div id="CentreColumn">Stream goes here...
-    <img src="http://www.gravatar.com/avatar/128f8ce5456a7c64f67626b2b756c7e6&s=120" alt="" title="" />
+<div id="CentreColumn">
+    <div id="tester">
+        
+    </div>
 </div>
 
         <div id="RightColumn">

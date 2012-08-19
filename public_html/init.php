@@ -27,12 +27,18 @@
     define( 'DB_HOST',          'localhost' );
     define( 'DB_USER',          'root' );
     define( 'DB_PASS',          'Diablo2' );
+    define( 'DB_DB',            'thnm' );
 
 
     /**
      * Website Settings:
      */
     define( 'TITLE',            'Top Hats & Monocles' );
+
+
+    //--------------------------------------------------------------------------
+    // Begin Building Website:
+    //--------------------------------------------------------------------------
 
     /**
      * Timezone Configuration:
@@ -41,7 +47,7 @@
     {
         if ( ! @date_default_timezone_get() )
         {
-            date_default_timezone_set( @ini_get('date.timezone') ? ini_get('date.timezone') : 'UTC' );
+            date_default_timezone_set( @ini_get( 'date.timezone' ) ? ini_get( 'date.timezone' ) : 'UTC' );
         }
         else
         {
