@@ -18,7 +18,7 @@
         <div id="LeftColumn" class="SideColumn">
             <ul id="PrimaryNavigation">
                 {{foreach $arrPN as $PNKey=>$PNItem}}
-                    <li><a href="{{$PNKey}}">{{$PNKey}}</a></li>
+                    <li><a href="{{$PNItem}}">{{$PNKey}}</a></li>
                 {{/foreach}}
             </ul>
         </div>

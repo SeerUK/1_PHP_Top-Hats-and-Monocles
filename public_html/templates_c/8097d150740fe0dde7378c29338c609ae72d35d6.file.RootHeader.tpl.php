@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 06:23:19
+<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 08:38:55
          compiled from "C:\PDE\1_PHP_Top-Hats-and-Monocles\public_html\modules\templates\Root\RootHeader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:265085031d5e08eca74-38170941%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8097d150740fe0dde7378c29338c609ae72d35d6' => 
     array (
       0 => 'C:\\PDE\\1_PHP_Top-Hats-and-Monocles\\public_html\\modules\\templates\\Root\\RootHeader.tpl',
-      1 => 1345443756,
+      1 => 1345451933,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'strStreamTitle' => 0,
     'arrPN' => 0,
+    'PNItem' => 0,
     'PNKey' => 0,
   ),
   'has_nocache_code' => false,
@@ -55,7 +56,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['PNItem']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['PNItem']->_loop = true;
  $_smarty_tpl->tpl_vars['PNKey']->value = $_smarty_tpl->tpl_vars['PNItem']->key;
 ?>
-                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PNKey']->value;?>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PNItem']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['PNKey']->value;?>
 </a></li>
                 <?php } ?>

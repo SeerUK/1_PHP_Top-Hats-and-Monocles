@@ -140,6 +140,7 @@ h1 {
         width: 246px;
     }
         .SideColumn .SideBarBox input[type="text"], .SideColumn .SideBarBox input[type="password"] {
+            background-color: #555;
             border: 1px solid #222;
             color: white;
             padding: 9px;

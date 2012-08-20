@@ -1,8 +1,8 @@
         <div id="RightColumn" class="SideColumn">
             <div class="SideBarBox right">
                 <form method="POST">
-                    <input name="iptLoginUser" type="text" />
-                    <input name="iptLoginPass" type="password" />
+                    <input name="iptLoginUser" type="text" placeholder="Username" />
+                    <input name="iptLoginPass" type="password" placeholder="Password" />
                     <input name="iptLoginSubmit" type="submit" />
                 </form>
             </div>
