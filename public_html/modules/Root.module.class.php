@@ -58,13 +58,18 @@
         private function Root()
         {
 
-            $this->Engine->caching = true;
+            $this->Engine->caching = false;
             $this->Engine->cache_lifetime = 120;
 
             /**
              * Stream Information:
              */
             $this->Engine->Assign( 'strStreamTitle', 'Darksiders' );
+
+            /**
+             * Navigation:
+             */
+            $this->Engine->Assign( 'arrPN', CommonUI::GetPrimaryNav(0) );
 
             /**
              * User Information:

@@ -15,11 +15,10 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <div id="LeftColumn">
+        <div id="LeftColumn" class="SideColumn">
             <ul id="PrimaryNavigation">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">STREAMERS</a></li>
-                <li><a href="#">REGISTER</a></li>
-                <li><a href="#">FORUM</a></li>
+                {{foreach $arrPN as $PNKey=>$PNItem}}
+                    <li><a href="{{$PNKey}}">{{$PNKey}}</a></li>
+                {{/foreach}}
             </ul>
         </div>

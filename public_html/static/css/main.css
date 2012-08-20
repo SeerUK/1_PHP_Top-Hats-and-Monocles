@@ -13,6 +13,9 @@ html { height: 100%; }
 body {
     font: 13px 'prenton', sans-serif;
     height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -29,6 +32,12 @@ body {
 
 a { color: #096; text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+form { margin: 0; padding: 0; }
+
+input {
+    font: 13px 'prenton', sans-serif;
+}
 
 h1 {
 
@@ -120,3 +129,30 @@ h1 {
     top: 0;
     width: 300px;
 }
+
+    /**
+     * Column Inner Elements:
+     */
+    .SideColumn .SideBarBox {
+        background-color: #3b3b3b;
+        padding: 14px;
+        position: relative;
+        width: 246px;
+    }
+        .SideColumn .SideBarBox input[type="text"], .SideColumn .SideBarBox input[type="password"] {
+            border: 1px solid #222;
+            color: white;
+            padding: 9px;
+            width: 153px;
+        }
+        .SideColumn .SideBarBox input[type="submit"] {
+            background-color: #009966;
+            border: 1px solid #006644;
+            border-radius: 4px;
+            color: white;
+            height: 78px;
+            position: absolute;
+            right: 8px;
+            top: 15px;
+            width: 70px;
+        }

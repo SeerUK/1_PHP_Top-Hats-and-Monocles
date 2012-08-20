@@ -1,5 +1,11 @@
-        <div id="RightColumn">
-
+        <div id="RightColumn" class="SideColumn">
+            <div class="SideBarBox right">
+                <form method="POST">
+                    <input name="iptLoginUser" type="text" />
+                    <input name="iptLoginPass" type="password" />
+                    <input name="iptLoginSubmit" type="submit" />
+                </form>
+            </div>
         </div>
         <div id="Footer">
             <div class="lines"></div>
