@@ -12,7 +12,10 @@
         <link rel="stylesheet" href="{{$smarty.const.STATIC_ROOT}}css/main.css" />
 
         <!-- Include JavaScript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        <script src="{{$smarty.const.STATIC_ROOT}}js/jquery.min.js" type="text/javascript"></script>
+
+        <!-- Setup Page -->
+        <script src="{{$smarty.const.STATIC_ROOT}}js/tophats.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="LeftColumn" class="SideColumn">
@@ -22,3 +25,5 @@
                 {{/foreach}}
             </ul>
         </div>
+        <div id="CentreColumn">
+            <h1><span>Top Hats & Monocles</span></h1>

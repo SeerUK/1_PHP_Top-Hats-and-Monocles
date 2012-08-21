@@ -1,9 +1,5 @@
 {{include file='.\RootHeader.tpl'}}
 
-<div id="CentreColumn">
-    <div id="tester">
-        
-    </div>
-</div>
+<div id="CentreContent">lol</div>
 
 {{include file='.\RootFooter.tpl'}}

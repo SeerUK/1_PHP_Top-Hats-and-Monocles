@@ -20,11 +20,8 @@
     class DbHandler
     {
 
-        private $objDb;
-
-        public function __construct()
+        public static function Connect()
         {
-
             /**
              * Initialisde database connection upon class creation:
              */

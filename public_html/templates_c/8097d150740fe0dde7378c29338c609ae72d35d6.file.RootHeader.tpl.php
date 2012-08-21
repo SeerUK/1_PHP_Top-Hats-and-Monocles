@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 08:38:55
+<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 22:33:22
          compiled from "C:\PDE\1_PHP_Top-Hats-and-Monocles\public_html\modules\templates\Root\RootHeader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:265085031d5e08eca74-38170941%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8097d150740fe0dde7378c29338c609ae72d35d6' => 
     array (
       0 => 'C:\\PDE\\1_PHP_Top-Hats-and-Monocles\\public_html\\modules\\templates\\Root\\RootHeader.tpl',
-      1 => 1345451933,
+      1 => 1345501985,
       2 => 'file',
     ),
   ),
@@ -44,7 +44,12 @@ css/fonts.css" />
 css/main.css" />
 
         <!-- Include JavaScript -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        <script src="<?php echo @STATIC_ROOT;?>
+js/jquery.min.js" type="text/javascript"></script>
+
+        <!-- Setup Page -->
+        <script src="<?php echo @STATIC_ROOT;?>
+js/tophats.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="LeftColumn" class="SideColumn">
@@ -62,4 +67,6 @@ $_smarty_tpl->tpl_vars['PNItem']->_loop = true;
                 <?php } ?>
             </ul>
         </div>
+        <div id="CentreColumn">
+            <h1><span>Top Hats & Monocles</span></h1>
 <?php }} ?>

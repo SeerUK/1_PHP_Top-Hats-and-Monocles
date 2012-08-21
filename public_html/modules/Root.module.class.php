@@ -58,6 +58,8 @@
         private function Root()
         {
 
+            DbHandler::Query('SELECT * FROM `thnm_user`');
+
             $this->Engine->caching = false;
             $this->Engine->cache_lifetime = 120;
 

@@ -1,10 +1,13 @@
+        </div>
         <div id="RightColumn" class="SideColumn">
             <div class="SideBarBox right">
-                <form method="POST">
-                    <input name="iptLoginUser" type="text" placeholder="Username" />
-                    <input name="iptLoginPass" type="password" placeholder="Password" />
-                    <input name="iptLoginSubmit" type="submit" />
-                </form>
+                <div class="inner">
+                    <form method="POST">
+                        <input name="iptLoginUser" type="text" placeholder="Username" />
+                        <input name="iptLoginPass" type="password" placeholder="Password" />
+                        <input name="iptLoginSubmit" type="submit" value="Sign In" />
+                    </form>
+                </div>
             </div>
         </div>
         <div id="Footer">

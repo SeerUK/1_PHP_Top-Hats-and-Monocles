@@ -64,5 +64,5 @@
     /**
      * Begin Initialisation:
      */
-    $Db = new DbHandler;
-    $Template = new TemplateHandler;
+    DbHandler::Connect();               // Create database instance
+    $Template = new TemplateHandler;    // Create template instance
