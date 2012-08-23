@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 21:47:03
+<?php /* Smarty version Smarty-3.1.11, created on 2012-08-22 20:50:47
          compiled from "C:\PDE\1_PHP_Top-Hats-and-Monocles\public_html\modules\templates\Root\RootFooter.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:283735031d5e094bbb0-28910261%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '98498700d02866c12b5c8da8f28cc04bd30402c3' => 
     array (
       0 => 'C:\\PDE\\1_PHP_Top-Hats-and-Monocles\\public_html\\modules\\templates\\Root\\RootFooter.tpl',
-      1 => 1345499201,
+      1 => 1345668646,
       2 => 'file',
     ),
   ),
@@ -24,10 +24,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="RightColumn" class="SideColumn">
             <div class="SideBarBox right">
                 <div class="inner">
-                    <form method="POST">
+                    <form action="<?php echo @SECURE_ROOT;?>
+?module=Login&invoke=DoLogin" method="POST">
                         <input name="iptLoginUser" type="text" placeholder="Username" />
                         <input name="iptLoginPass" type="password" placeholder="Password" />
-                        <input name="iptLoginSubmit" type="submit" value="Sign In" />
+                        <input type="submit" value="Sign In" />
                     </form>
                 </div>
             </div>

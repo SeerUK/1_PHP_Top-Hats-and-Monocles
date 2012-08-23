@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>404 Not Found | {$strTitle}</title>
+        <title>404 Not Found | {{$smarty.const.TITLE}}</title>
     </head>
     <body>
-        
+
     </body>
 </html>

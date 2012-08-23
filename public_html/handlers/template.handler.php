@@ -14,6 +14,7 @@
      * Require the current template system:
      */
     require_once( 'template.libs/Smarty.class.php' );
+    require_once( 'session.handler.php' );
 
     /**
      * TemplateHandler Main Class:
@@ -21,9 +22,11 @@
     class TemplateHandler
     {
 
-        public $module;
-        public $invoke;
-        public $instance;
+        public $strModule;
+        public $strInvoke;
+        public $objInstance;
+
+        public static $objSession;
 
         public function __construct()
         {
@@ -64,13 +67,13 @@
              */
             if ( isset( $_GET['module'] ) && isset( $_GET['invoke'] ) )
             {
-                $this->module = $_GET['module'];
-                $this->invoke = $_GET['invoke'];
+                $this->strModule = $_GET['module'];
+                $this->strInvoke = $_GET['invoke'];
 
                 /**
                  * URI template values must be alphanumeric.
                  */
-                if ( !ctype_alnum( $this->module ) || !ctype_alnum( $this->invoke ) )
+                if ( !ctype_alnum( $this->strModule ) || !ctype_alnum( $this->strInvoke ) )
                 {
                     $this::HTTPError('404');
                 }
@@ -78,12 +81,12 @@
                 /**
                  * Verify Existance of module and invokation... test invoke:
                  */
-                if ( file_exists( 'modules/' . $this->module . '.module.class.php' ) )
+                if ( file_exists( 'modules/' . $this->strModule . '.module.class.php' ) )
                 {
-                    require_once( 'modules/' . $this->module . '.module.class.php' );
+                    require_once( 'modules/' . $this->strModule . '.module.class.php' );
 
-                    $strClass = $this->module . 'UI';
-                    $this->instance = new $strClass($this->invoke);
+                    $strClass = $this->strModule . 'UI';
+                    $this->objInstance = new $strClass($this->strInvoke);
                 }
                 else
                 {
@@ -108,12 +111,41 @@
     }
 
     /**
-     * Interface to control the module classes:
+     * Abstract base class to control the module classes:
      *
-     * Should be implemented in every module class to help ensure correct
+     * Should be extended in every module class to ensure correct
      * functionality.
      */
-    interface TemplateReq
+    abstract class TemplateReq extends TemplateHandler
     {
-        public function __construct( $strInvoke );
+
+        /**
+         * Engine calls the current template handler
+         */
+        protected $objEngine;
+
+        /**
+         * Check the invokation, prepare it for building:
+         */
+        public function __construct( $strInvoke )
+        {
+
+            if ( is_numeric( substr( $strInvoke, 1 ) ) )
+            {
+                $strInvoke = 'n' . $strInvoke;
+            }
+
+            if ( !method_exists( $this, $strInvoke ) )
+            {
+                TemplateHandler::HTTPError('404');
+            }
+            else
+            {
+                $strHandler = TemplateHandler::GetHandler();
+                $this->objEngine = new $strHandler;
+                $this->$strInvoke();
+            }
+
+        }
+
     }

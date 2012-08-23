@@ -9,18 +9,67 @@
      *
      */
 
+    require_once( 'handlers/password.handler.php' );
+
     /**
      * Main Login Class
      */
-    class LoginUI
+    class LoginUI extends TemplateReq
     {
 
-        private $objDb;
+        //----------------------------------------------------------------------
+        // Begin build functions:
+        //----------------------------------------------------------------------
 
-        public function __construct( $strUsername, $strPassword, $bolRemember = false )
+        /**
+         * @invoke      DoLogin
+         *
+         * @desc        Processes login requests. Does not actually display a
+         *              page.
+         */
+        protected function DoLogin()
         {
 
-            DbHander::Query('SELECT * FROM `thnm_user`');
+            /**
+             *Prepare user input for MySQL:
+             */
+            $strUsername = DbHandler::Escape( $_POST['iptLoginUser'] );
+            $strPassword = DbHandler::Escape( $_POST['iptLoginPass'] );
+
+            /**
+             * Query Database:
+             */
+            $strUserPassHash = DbHandler::Fetch("
+                    SELECT
+                        user_pass AS strUserPass
+                    FROM
+                        tbluser
+                    WHERE
+                        user_name = '$strUsername'
+                    ");
+
+            /**
+             * If no use was found, exit here...
+             */
+            if ( isset( $strUserPassHash ) )
+            {
+                /**
+                 * Check to see if password matches:
+                 */
+                if ( PasswordHandler::Check( $strPassword, $strUserPassHash ) )
+                {
+                    echo "Success!";
+                    TemplateHandler::$objSession = new SessionHandler($strUsername, $strUserPassHash);
+                    return true;
+                } else {
+                    echo "Password doesn't match!";
+                    return false;
+                }
+            } else {
+                echo "No user found.";
+                return false;
+            }
+
         }
 
     }

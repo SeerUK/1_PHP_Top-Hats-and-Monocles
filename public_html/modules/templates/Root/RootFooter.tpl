@@ -2,10 +2,10 @@
         <div id="RightColumn" class="SideColumn">
             <div class="SideBarBox right">
                 <div class="inner">
-                    <form method="POST">
+                    <form action="{{$smarty.const.SECURE_ROOT}}?module=Login&invoke=DoLogin" method="POST">
                         <input name="iptLoginUser" type="text" placeholder="Username" />
                         <input name="iptLoginPass" type="password" placeholder="Password" />
-                        <input name="iptLoginSubmit" type="submit" value="Sign In" />
+                        <input type="submit" value="Sign In" />
                     </form>
                 </div>
             </div>

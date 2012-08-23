@@ -34,6 +34,21 @@
             ));
         }
 
+        public static function Escape($strEscape)
+        {
+            return mysql_real_escape_string($strEscape);
+        }
+
+        public static function Fetch($strQuery)
+        {
+            return dibi::fetchSingle($strQuery);
+        }
+
+        public static function FetchRow($strQuery)
+        {
+            return dibi::fetch($strQuery);
+        }
+
         public static function Query($strQuery)
         {
             try
@@ -47,5 +62,7 @@
                 exit;
             }
         }
+
+
 
     }

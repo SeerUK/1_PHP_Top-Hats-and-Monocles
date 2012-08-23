@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-08-20 22:33:22
+<?php /* Smarty version Smarty-3.1.11, created on 2012-08-23 06:22:53
          compiled from "C:\PDE\1_PHP_Top-Hats-and-Monocles\public_html\modules\templates\Root\RootHeader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:265085031d5e08eca74-38170941%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8097d150740fe0dde7378c29338c609ae72d35d6' => 
     array (
       0 => 'C:\\PDE\\1_PHP_Top-Hats-and-Monocles\\public_html\\modules\\templates\\Root\\RootHeader.tpl',
-      1 => 1345501985,
+      1 => 1345702973,
       2 => 'file',
     ),
   ),
@@ -39,13 +39,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <!-- Include Stylesheets -->
         <link rel="stylesheet" href="<?php echo @STATIC_ROOT;?>
-css/fonts.css" />
-        <link rel="stylesheet" href="<?php echo @STATIC_ROOT;?>
 css/main.css" />
+        <link rel="stylesheet" href="<?php echo @STATIC_ROOT;?>
+css/dev.css" />
 
         <!-- Include JavaScript -->
         <script src="<?php echo @STATIC_ROOT;?>
 js/jquery.min.js" type="text/javascript"></script>
+        <script src="<?php echo @STATIC_ROOT;?>
+js/modernizer.js" type="text/javascript"></script>
 
         <!-- Setup Page -->
         <script src="<?php echo @STATIC_ROOT;?>
@@ -66,6 +68,64 @@ $_smarty_tpl->tpl_vars['PNItem']->_loop = true;
 </a></li>
                 <?php } ?>
             </ul>
+            <div class="SideBarBox inner">
+                <div class="inner">
+                    <div id="MainStream"><!-- I hope hipsters don't stop watching because it's too mainstream... -->
+                        <div class="left">
+                            <img class="left" src="<?php echo @STATIC_ROOT;?>
+images/games/lol.jpg" alt="" title="" />
+                            <div class="left">
+                                <span class="viewing">Currently Watching Live:</span>
+                                <span class="game">League of Legends</span>
+                                <span class="streamer"><em><span style="color: #0099ff;">Smoggy</span>::1,245 viewers</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="MT20"></div>
+            <div class="SideBarBox inner">
+                <div class="inner">
+                    <div class="AltStream"><!-- I hope hipsters don't stop watching because it's too mainstream... -->
+                        <div class="left">
+                            <img class="left" src="<?php echo @STATIC_ROOT;?>
+images/games/dksdr.jpg" alt="" title="" />
+                            <div class="left">
+                                <span class="game">Darksiders</span>
+                                <span class="streamer"><em>Live: <span style="color: #009966;">Seer</span>::79 viewers</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="SideBarBox inner">
+                <div class="inner">
+                    <div class="AltStream"><!-- I hope hipsters don't stop watching because it's too mainstream... -->
+                        <div class="left">
+                            <img class="left" src="<?php echo @STATIC_ROOT;?>
+images/games/lol.jpg" alt="" title="" />
+                            <div class="left">
+                                <span class="game">League of Legends</span>
+                                <span class="streamer"><em>Live: <span style="color: #0099ff;">FatMidget</span>::121 viewers</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="SideBarBox inner">
+                <div class="inner">
+                    <div class="AltStream"><!-- I hope hipsters don't stop watching because it's too mainstream... -->
+                        <div class="left">
+                            <img class="left" src="<?php echo @STATIC_ROOT;?>
+images/games/gw2.jpg" alt="" title="" />
+                            <div class="left">
+                                <span class="game">Guild Wars 2</span>
+                                <span class="streamer"><em>Live: <span style="color: #0099ff;">Drazzian</span>::164 viewers</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="CentreColumn">
             <h1><span>Top Hats & Monocles</span></h1>

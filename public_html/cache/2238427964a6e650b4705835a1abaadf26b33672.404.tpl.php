@@ -5,23 +5,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2238427964a6e650b4705835a1abaadf26b33672' => 
     array (
       0 => 'modules\\templates\\Error\\404.tpl',
-      1 => 1345292095,
+      1 => 1345577473,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '277525031f7a50ce9e4-51771881',
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5031f7a51343b1_17497354',
   'cache_lifetime' => 3600,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5034b4934c30b0_38930924',
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5031f7a51343b1_17497354')) {function content_5031f7a51343b1_17497354($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5034b4934c30b0_38930924')) {function content_5034b4934c30b0_38930924($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
-        <title>404 Not Found | {$strTitle}</title>
+        <title>404 Not Found | Top Hats & Monocles</title>
     </head>
     <body>
-        
+
     </body>
 </html>
 <?php }} ?>

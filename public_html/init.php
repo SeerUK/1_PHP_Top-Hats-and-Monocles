@@ -27,8 +27,7 @@
     define( 'DB_HOST',          'localhost' );
     define( 'DB_USER',          'root' );
     define( 'DB_PASS',          'Diablo2' );
-    define( 'DB_DB',            'thnm' );
-
+    define( 'DB_DB',            'tophats' );
 
     /**
      * Website Settings:
@@ -64,5 +63,5 @@
     /**
      * Begin Initialisation:
      */
-    DbHandler::Connect();               // Create database instance
+    DbHandler::Connect();          // Create database instance
     $Template = new TemplateHandler;    // Create template instance

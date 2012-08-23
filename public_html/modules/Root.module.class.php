@@ -14,37 +14,8 @@
      */
     require_once( 'modules/Common.class.php' );
 
-    class RootUI implements TemplateReq
+    class RootUI extends TemplateReq
     {
-
-        /**
-         * Engine calls the current template handler
-         */
-        private $Engine;
-
-        /**
-         * Check the invokation, prepare it for building:
-         */
-        public function __construct( $strInvoke )
-        {
-
-            if ( is_numeric( substr( $strInvoke, 1 ) ) )
-            {
-                $strInvoke = 'n' . $strInvoke;
-            }
-
-            if ( !method_exists( $this, $strInvoke ) )
-            {
-                TemplateHandler::HTTPError('404');
-            }
-            else
-            {
-                $strHandler = TemplateHandler::GetHandler();
-                $this->Engine = new $strHandler;
-                $this->$strInvoke();
-            }
-
-        }
 
         //----------------------------------------------------------------------
         // Begin build functions:
@@ -55,30 +26,28 @@
          *
          * @desc        Website Homepage.
          */
-        private function Root()
+        protected function Root()
         {
 
-            DbHandler::Query('SELECT * FROM `thnm_user`');
-
-            $this->Engine->caching = false;
-            $this->Engine->cache_lifetime = 120;
+            $this->objEngine->caching = false;
+            $this->objEngine->cache_lifetime = 120;
 
             /**
              * Stream Information:
              */
-            $this->Engine->Assign( 'strStreamTitle', 'Darksiders' );
+            $this->objEngine->Assign( 'strStreamTitle', 'League of Legends' );
 
             /**
              * Navigation:
              */
-            $this->Engine->Assign( 'arrPN', CommonUI::GetPrimaryNav(0) );
+            $this->objEngine->Assign( 'arrPN', CommonUI::GetPrimaryNav(0) );
 
             /**
              * User Information:
              */
-            $this->Engine->Assign( 'strAvatarUrl', CommonUI::GetAvatar( 'Seer', 120 ) );
+            $this->objEngine->Assign( 'strAvatarUrl', CommonUI::GetAvatar( 'Seer', 120 ) );
 
-            $this->Engine->Display( 'modules/templates/Root/Root.tpl' );
+            $this->objEngine->Display( 'modules/templates/Root/Root.tpl' );
 
         }
 
