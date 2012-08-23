@@ -12,10 +12,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'nocache_hash' => '277525031f7a50ce9e4-51771881',
   'cache_lifetime' => 3600,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5034b4934c30b0_38930924',
+  'unifunc' => 'content_50368b54ccee35_39505225',
   'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5034b4934c30b0_38930924')) {function content_5034b4934c30b0_38930924($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_50368b54ccee35_39505225')) {function content_50368b54ccee35_39505225($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <title>404 Not Found | Top Hats & Monocles</title>

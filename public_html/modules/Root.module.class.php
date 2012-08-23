@@ -30,7 +30,6 @@
         {
 
             $this->objEngine->caching = false;
-            $this->objEngine->cache_lifetime = 120;
 
             /**
              * Stream Information:
