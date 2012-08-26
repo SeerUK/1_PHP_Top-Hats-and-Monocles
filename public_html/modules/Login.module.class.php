@@ -31,43 +31,60 @@
         {
 
             /**
-             *Prepare user input for MySQL:
+             * Check we're actually being sent something..
              */
-            $strUsername = DbHandler::Escape( $_POST['iptLoginUser'] );
-            $strPassword = DbHandler::Escape( $_POST['iptLoginPass'] );
-
-            /**
-             * Query Database:
-             */
-            $strUserPassHash = DbHandler::Fetch("
-                    SELECT
-                        user_pass AS strUserPass
-                    FROM
-                        tbluser
-                    WHERE
-                        user_name = '$strUsername'
-                    ");
-
-            /**
-             * If no use was found, exit here...
-             */
-            if ( isset( $strUserPassHash ) )
+            if ( isset( $_POST['iptLoginUser'] ) )
             {
+
                 /**
-                 * Check to see if password matches:
+                 *Prepare user input for MySQL:
                  */
-                if ( PasswordHandler::Check( $strPassword, $strUserPassHash ) )
+                $strUsername = DbHandler::Escape( $_POST['iptLoginUser'] );
+                $strPassword = DbHandler::Escape( $_POST['iptLoginPass'] );
+
+                /**
+                 * Query Database:
+                 */
+                $strUserPassHash = DbHandler::Fetch("
+                        SELECT
+                            user_pass AS strUserPass
+                        FROM
+                            tbl_user
+                        WHERE
+                            user_name = '$strUsername'
+                        ");
+
+                /**
+                 * If no use was found, exit here...
+                 */
+                if ( isset( $strUserPassHash ) )
                 {
-                    echo "Success!";
-                    TemplateHandler::$objSession = new SessionHandler($strUsername, $strUserPassHash);
-                    return true;
+                    /**
+                     * Check to see if password matches:
+                     */
+                    if ( PasswordHandler::Check( $strPassword, $strUserPassHash ) )
+                    {
+                        echo "Success!";
+                        SessionHandler::Create( $strUsername, $strUserPassHash );
+                        return true;
+                    }
+                    else
+                    {
+                        echo "Password doesn't match!";
+                        return false;
+                    }
                 } else {
-                    echo "Password doesn't match!";
+                    echo "No user found.";
                     return false;
                 }
-            } else {
-                echo "No user found.";
-                return false;
+
+            }
+            else
+            {
+
+                header( 'Location: ' . ROOT );
+                exit;
+
             }
 
         }

@@ -19,6 +19,8 @@
     define( 'SECURE_ROOT',      'https://thnm.pde.com/' );
     define( 'STATIC_ROOT',      '//thnm.pde.com/static/' ); /* Protocol-less for
                                                           greater flexibility */
+    define( 'COOKIE_DOMAIN',    'thnm.pde.com' );
+    define( 'COOKIE_PATH',      '/' );
 
     /**
      * Database Settings
@@ -33,6 +35,7 @@
      * Website Settings:
      */
     define( 'TITLE',            'Top Hats & Monocles' );
+    define( 'SESSION_COOKIE',      'thnm180_sessuid' );
 
 
     //--------------------------------------------------------------------------

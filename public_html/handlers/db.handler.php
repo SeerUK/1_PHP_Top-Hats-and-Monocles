@@ -44,6 +44,11 @@
             return dibi::fetchSingle($strQuery);
         }
 
+        public static function FetchAll($strQuery)
+        {
+            return dibi::fetchAll($strQuery);
+        }
+
         public static function FetchRow($strQuery)
         {
             return dibi::fetch($strQuery);
