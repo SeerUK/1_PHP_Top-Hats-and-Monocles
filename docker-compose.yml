@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+    web:
+        container_name: thmn-web
+        image: nginx:1-alpine
+        links:
+        - php:php.docker
+        ports:
+        - 127.0.0.1:5050:80
+        volumes:
+        - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./docker/nginx/php.conf:/etc/nginx/conf.d/default.conf:ro
+        - ./thnm_orig:/opt/www
+
+    php:
+        container_name: thnm-php
+        image: seeruk/php-fpm:5.6-dev
+        working_dir: /opt/www
+        volumes:
+        - ./thnm_orig:/opt/www

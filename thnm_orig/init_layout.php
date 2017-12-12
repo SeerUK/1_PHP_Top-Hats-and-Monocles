@@ -8,8 +8,8 @@
    // Elliot Wright
    // init_layout.php
    //
-  */ 
-  
+  */
+
   // Function to retrieve template values:
   $tFound = false;
   $siteMapVars = array();
@@ -18,7 +18,7 @@
     global $siteMapVars;
     global $tFound;
     // Open XML:
-    $xml = simplexml_load_file(ROOT_PATH . "modules/" . $mID . "/sitemap.xml");
+    $xml = simplexml_load_file("modules/" . $mID . "/sitemap.xml");
     function temp_node($nod2e, $smnID) {
       // Setup global variables:
       global $siteMapVars;

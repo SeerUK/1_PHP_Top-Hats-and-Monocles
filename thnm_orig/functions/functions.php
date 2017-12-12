@@ -22,9 +22,9 @@
   // 009 - SMTP Mail
   // 010 - Check E-Mail Address Validity:
   // 011 - Process Errors
-  
+
   // <---- Begin Functions ----> //
-      
+
   // 001 - Breadcrumbs
   // The breadcrumbs function creates an array storing the names and paths
   // of the currently viewed page based on the sitemap.
@@ -38,7 +38,7 @@
     global $rFound;
     global $rFoundLevel;
     // Open XML:
-    $xml = simplexml_load_file(ROOT_PATH . "modules/" . $mID . "/sitemap.xml");
+    $xml = simplexml_load_file("modules/" . $mID . "/sitemap.xml");
     // Scan XML for child nodes.
     function print_node($node, $level, $smnID) {
       // Allow the use of global variables:
@@ -86,7 +86,7 @@
       }
     }
   }
-  
+
   // 002 - $pageID to Page Title
   // This function converts the given page ID into the page title
   // based on values in the xml site map.
@@ -95,7 +95,7 @@
     // Setup global variables:
     global $pFound;
     // Open XML:
-    $xml = simplexml_load_file(ROOT_PATH . "modules/" . $mID . "/sitemap.xml");
+    $xml = simplexml_load_file("modules/" . $mID . "/sitemap.xml");
     function find_node($node, $smnID) {
       // Setup global variables:
       global $pFound;
@@ -129,8 +129,8 @@
       }
     }
   }
-  
-  
+
+
   // 003 - Custom Variable Replacement (SITEMAP ONLY!)
   // This functions converts the custom variables used in the XML files into
   // the appropriate sitemap variables.
@@ -149,7 +149,7 @@
     } else {
       return $data;
     }
-  } 
+  }
 
   // 004: Header Redirect and Exit Function
   // This function will redirect a user and then exit the script after the
@@ -200,10 +200,10 @@
         return $tarray['mday'] . "/" . $tarray['mon'] . "/" . $tarray['year'];
       }
     } else { // Precise, i.e. complete time:
-      
+
     }
   }
-  
+
   // 006: User Access Redirect
   // This function will check if the user is currently logged in
   function loginStatus() {
@@ -214,33 +214,33 @@
       return false;
     }
   }
-  
+
   // 007 - No Cache Function:
   // Stops the browser from caching the page so content will be properly
   // displayed if changes have been made by the user etc.
   function noCache() {
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); 
-    header("Cache-Control: no-store, no-cache, must-revalidate"); 
+    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+    header("Cache-Control: no-store, no-cache, must-revalidate");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
   }
-  
+
   // 009 - SMTP Mail
   // This function uses the PEAR Mail module to send mail via SMTP so it is sent
   // from mail.domain.ext rather than not having a sender.
   function smtpMail($sendTo,$subject,$message) {
     require_once "Mail.php";
-    
+
     $from = SITE_NAME . "<" . SMTP_USER . ">";
     $to = "<" . $sendTo . ">";
     $subject = $subject;
     $body = $message;
-    
+
     $host = SMTP_HOST;
     $username = SMTP_USER;
     $password = SMTP_PASS;
-    
+
     $headers = array ('From' => $from,
       'To' => $to,
       'Subject' => $subject);
@@ -249,16 +249,16 @@
         'auth' => true,
         'username' => $username,
         'password' => $password));
-    
+
     $mail = $smtp->send($to, $headers, $body);
-    
+
     if (PEAR::isError($mail)) {
       return false;
      } else {
       return true;
      }
   }
-  
+
   //010 - Check E-Mail Address Validity:
   function validEmail($email) {
     $isValid = true;
@@ -289,7 +289,7 @@
         // domain part has two consecutive dots
         $isValid = false;
       } else if(!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/', str_replace("\\\\","",$local))) {
-        // character not valid in local part unless 
+        // character not valid in local part unless
         // local part is quoted
         if (!preg_match('/^"(\\\\"|[^"])+"$/', str_replace("\\\\","",$local))) {
           $isValid = false;
@@ -302,7 +302,7 @@
     }
     return $isValid;
   }
-  
+
   // 011 - Display Errors
   // This function is called to check if there are errors on submitted data:
   function errors($error) {
@@ -316,7 +316,7 @@
       return false;
     }
   }
-  
+
   // <---- End Functions ----> //
 
 ?>

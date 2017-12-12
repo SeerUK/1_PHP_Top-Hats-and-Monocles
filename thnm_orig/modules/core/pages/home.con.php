@@ -8,8 +8,8 @@
    // Elliot Wright
    // modules/core/pages/base/home.con.php
    //
-  */  
-  
+  */
+
   if(!isset($_GET['sid'])) {
     $streamID = 1;
   } else {
@@ -23,7 +23,7 @@
       $streamID = 1;
     }
   }
-  
+
   if($streamID == 1) {
     $checkLiveChannel = mysql_fetch_assoc(mysql_query("SELECT * FROM `thnm_streams` WHERE (`stream_id` = '1')"));
     if($checkLiveChannel['current_streamer_id'] == 1) {
@@ -32,7 +32,7 @@
       while($row=mysql_fetch_assoc($results)) {
         $streams[$row['stream_id']] = $row;
       }
-      
+
       foreach($streams as $stream) {
         if($stream['current_streamer_id'] != 1) {
           $streamID = $stream['stream_id'];
@@ -44,12 +44,12 @@
 
   @flush();
   @ob_flush();
-  
+
   $sql = "SELECT `stream_views` FROM `thnm_streams` WHERE (`stream_id`='$streamID')";
   $result = mysql_fetch_assoc(mysql_query($sql));
   $increment = intval($result['stream_views']) + 1;
   mysql_query("UPDATE `thnm_streams` SET `stream_views`='$increment' WHERE (`stream_id`='$streamID')");
-  
+
   class stream {
     function __construct() {
       global $streamID;
@@ -90,7 +90,7 @@
   if($user->userData($stream->data['current_streamer_id'])) {
     $streamer->data = $user->userData($stream->data['current_streamer_id']);
   }
-  
+
   $request_url = "http://api.justin.tv/api/stream/list.xml?channel=" . $stream->data['channel_name'];
   $xml = @simplexml_load_file($request_url);
   if($xml->stream) {
@@ -98,5 +98,5 @@
   } else {
     $format = "offline";
   }
-  
+
 ?>
